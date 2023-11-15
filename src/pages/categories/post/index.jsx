@@ -10,7 +10,6 @@ import {
 
 import React, { useEffect, useState } from "react";
 
-
 import { getCategories } from '../../../api/http-common'
 function CatePost() {
   const { cateId } = useParams();
@@ -19,7 +18,7 @@ function CatePost() {
   const navigate = useNavigate();
   return (
     <>
-      <div>{post.id}</div>
+      <div>post</div>
     </>
   )
 }

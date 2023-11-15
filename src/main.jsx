@@ -22,6 +22,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />} errorElement={<ErrorPage />}>
       <Route
+       index
         path="/helixapp-frontend-jsx-2/"
         element={<Home />}
       />
@@ -32,12 +33,11 @@ const router = createBrowserRouter(
       <Route
         path="categories/"
         element={<Categories />}
-      >
+      />
       <Route
-        path=":cateId"
+        path="/:cateId"
         element={<CatePost />}
       />
-      </Route>
     </Route>
   )
 );

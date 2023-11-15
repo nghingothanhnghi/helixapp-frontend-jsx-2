@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 import { getCategories } from '../../api/http-common'
+
 import HeroComponent from '../../components/hero'
+import LoadingComponent from "../../components/loading";
 import CategoriesList from '../../components/categories-home'
 
 function Home() {
   const [loading, setLoading] = useState(false);
-  const [categories, setCategories] = useState([0]);
+  const [categories, setCategories] = useState([]);
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
       getCategories()
         .then((json) => {
           setCategories(json.data);
-          //setSearchResults(json);
           console.log(json.data);
         })
         .catch((err) => {
@@ -29,11 +30,11 @@ function Home() {
     <>
       <HeroComponent></HeroComponent>
       <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
-      {loading && <p>loading....</p>}
+      {loading && <LoadingComponent/>}
       {!loading && categories.length ? (
         <ul className="grid grid-cols-3 gap-4">
-          {categories.map((posts, i) => (
-            <CategoriesList key={i} Name={posts.Name} id={posts.id}></CategoriesList>
+          {categories.map((post, i) => (
+            <CategoriesList key={i} post={post} ></CategoriesList>
           ))}
         </ul>
       ) : (
