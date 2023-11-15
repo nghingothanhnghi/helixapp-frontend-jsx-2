@@ -22,15 +22,15 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<Layout />} errorElement={<ErrorPage />}>
       <Route
-        path="/"
+        path="/helixapp-frontend-jsx-2/"
         element={<Home />}
       />
       <Route
-        path="/search-result"
+        path="search-result"
         element={<SearchResult />}
       />
       <Route
-        path="/categories/"
+        path="categories/"
         element={<Categories />}
       >
       <Route
