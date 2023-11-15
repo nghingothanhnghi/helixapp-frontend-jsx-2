@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const BASE_URL = 'http://api.chuotgreen.com/api';
+const BASE_URL = 'https://api.chuotgreen.com/api';
 
 export default axios.create({
     baseURL: BASE_URL,
