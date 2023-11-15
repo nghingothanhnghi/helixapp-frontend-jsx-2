@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
     const navigate = useNavigate();
     const onSubmit = () => {
+        // sua lai duong dan truc tiep
         navigate(`?s=${searchQuery}`);
     };
     return (

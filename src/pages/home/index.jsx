@@ -8,6 +8,7 @@ import CategoriesList from '../../components/categories-home'
 
 function Home() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     setLoading(true);
@@ -15,12 +16,13 @@ function Home() {
       getCategories()
         .then((json) => {
           setCategories(json.data);
-          console.log(json.data);
+          console.log(json.data, 'CategoriesList');
         })
         .catch((err) => {
           console.log(err);
+          setError(err.message);
         })
-        .finally(() => {
+        .finally(() => {       
           setLoading(false);
         });
     }, 1000);

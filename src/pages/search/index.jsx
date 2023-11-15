@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { getCategories } from '../../api/http-common';
+
 const posts = [
   { id: '1', name: 'This first post is about React' },
   { id: '2', name: 'This next post is about Preact' },
@@ -23,6 +25,7 @@ function SearchResult() {
   const query = new URLSearchParams(search).get('s');
   const [searchQuery, setSearchQuery] = useState(query || '');
   const filteredPosts = filterPosts(posts, searchQuery);
+  console.log(query)
   return (
     <>
       <div>Search</div>
