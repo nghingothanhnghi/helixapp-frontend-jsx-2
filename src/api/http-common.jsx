@@ -23,3 +23,8 @@ export const getFilterPosts = async () => {
   const response = await api.get('/posts')
   return response.data
 }
+
+export const getPost = async (id) => {
+  const response = await api.get('/posts/:id')
+  return response.data
+}

@@ -15,6 +15,7 @@ import Home from './pages/home'
 import SearchResult from './pages/search'
 import Categories from './pages/categories';
 import CatePost from './pages/categories/post';
+import PostDetail from './pages/post/post-detail';
 
 import './index.css'
 
@@ -38,6 +39,11 @@ const router = createBrowserRouter(
         path="/:cateId"
         element={<CatePost />}
       />
+      <Route
+        path=":cateId/posts/:postId"
+        element={<PostDetail />}
+      />
+      
     </Route>
   )
 );
