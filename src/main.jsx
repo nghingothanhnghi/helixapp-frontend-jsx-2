@@ -43,7 +43,6 @@ const router = createBrowserRouter(
         path="/:cateId/posts/:postId"
         element={<PostDetail />}
       />
-      
     </Route>
   )
 );
