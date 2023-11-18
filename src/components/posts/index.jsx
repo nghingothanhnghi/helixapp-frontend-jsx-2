@@ -12,7 +12,7 @@ export default function PostsList({ posts }) {
                             {description.children[0].text}
                         </p>);
                 })} */}
-                        {posts.attributes.shortDescription}
+                     <p className="text-slate-600"> {posts.attributes.shortDescription}</p>  
             </Link>
         </li>
     );
