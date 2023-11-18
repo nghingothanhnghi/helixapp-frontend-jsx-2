@@ -24,11 +24,11 @@ const router = createBrowserRouter(
     <Route element={<Layout />} errorElement={<ErrorPage />}>
       <Route
        index
-        path="/helixapp-frontend-jsx-2/"
+        path="/"
         element={<Home />}
       />
       <Route
-        path="helixapp-frontend-jsx-2/search-result"
+        path="/search-result"
         element={<SearchResult />}
       />
       <Route
@@ -48,8 +48,7 @@ const router = createBrowserRouter(
   )
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
-
     <RouterProvider router={router} />
-  
+
 );
 

@@ -21,9 +21,9 @@ function PostDetail() {
     //let post = getPost.find((post) => post.id === postId);
     // console.log(post);
     // const navigate = useNavigate();
-    const [post, setPost] = useState([]);
+    const [post, setPost] = useState({});
     useEffect(() => {
-        const timer = setTimeout(() => {
+        
             axios.get(`https://api.chuotgreen.com/api/posts/${postId}`)
                 .then((response) => {
                     setPost(response.data)
@@ -35,12 +35,13 @@ function PostDetail() {
                 })
                 .finally(() => {
                 });
-        }, 1000);
-        return () => clearTimeout(timer);
+  
+        
     }, []);
 
 
     return (
+        JSON.stringify(post) !== '{}'?
         <>
             <div className="pg-hd py-8 px-4 mx-auto max-w-screen-xl px-4">
                 <BreadcrumbComponent></BreadcrumbComponent>
@@ -62,7 +63,7 @@ function PostDetail() {
                     <div className="..."></div>
                 </div>
             </div>
-        </>
+        </>:<></>
     )
 }
 
