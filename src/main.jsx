@@ -24,7 +24,6 @@ const router = createBrowserRouter(
     <Route element={<Layout />} errorElement={<ErrorPage />}>
       <Route
        index
-        path="/"
         element={<Home />}
       />
       <Route
