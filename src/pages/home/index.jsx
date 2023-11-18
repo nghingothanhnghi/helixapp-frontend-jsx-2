@@ -34,7 +34,7 @@ function Home() {
       <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
       {loading && <LoadingComponent/>}
       {!loading && categories.length ? (
-        <ul className="grid grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {categories.map((post, i) => (
             <CategoriesList key={i} post={post} ></CategoriesList>
           ))}
