@@ -11,9 +11,11 @@ import {
 import axios from "axios";
 
 import React, { useEffect, useState } from "react";
+import  moment  from "moment";
 
 import BreadcrumbComponent from "../../components/breadcrumb";
 
+import SearchBarSM from "../../components/searchbar-sm";
 
 function PostDetail() {
     let { postId } = useParams();
@@ -23,7 +25,6 @@ function PostDetail() {
     // const navigate = useNavigate();
     const [post, setPost] = useState({});
     useEffect(() => {
-
         axios.get(`https://api.chuotgreen.com/api/posts/${postId}`)
             .then((response) => {
                 setPost(response.data)
@@ -35,8 +36,6 @@ function PostDetail() {
             })
             .finally(() => {
             });
-
-
     }, []);
 
 
@@ -48,7 +47,10 @@ function PostDetail() {
                     <div className="grid grid-cols-1 md:grid-cols-3 mb-10">
                         <div className="md:col-span-2">
                             <h1 className="mb-5 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{post.data.attributes.title}</h1>
-                            <p className="text-sm text-gray-500 dark:text-gray-400">{post.data.attributes.updatedAt}</p></div>
+                            <p className="text-sm text-gray-500 dark:text-gray-400">{moment(post.data.attributes.updatedAt).format('d MMM yyyy')}</p></div>
+                            <div>
+                                <SearchBarSM/>
+                            </div>
                     </div>
                 </div>
                 <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
@@ -60,6 +62,7 @@ function PostDetail() {
                                         {description.children[0].text}
                                     </p>);
                             })}
+                            <div className="devide-hr"></div>
                         </div>
                         <div className="..."></div>
                     </div>
