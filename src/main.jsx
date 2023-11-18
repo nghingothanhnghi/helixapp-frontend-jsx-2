@@ -36,11 +36,11 @@ const router = createBrowserRouter(
         element={<Categories />}
       />
       <Route
-        path="helixapp-frontend-jsx-2/:cateId"
+        path="/:cateId"
         element={<CatePost />}
       />
       <Route
-        path="helixapp-frontend-jsx-2/:cateId/posts/:postId"
+        path="/:cateId/posts/:postId"
         element={<PostDetail />}
       />
       
@@ -48,8 +48,8 @@ const router = createBrowserRouter(
   )
 );
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+
     <RouterProvider router={router} />
-  </React.StrictMode>
+  
 );
 
