@@ -4,6 +4,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
     const onSubmit = () => {
         // sua lai duong dan truc tiep
         navigate(`?s=${searchQuery}`);
+
     };
     return (
         <form action="/search-result" method="get"

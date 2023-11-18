@@ -28,6 +28,7 @@ function CatePost() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [posts, setPosts] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
@@ -46,7 +47,7 @@ function CatePost() {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-  const [category, setCategory] = useState([]);
+ 
   useEffect(() => {
       const timer = setTimeout(() => {
           axios.get(`https://api.chuotgreen.com/api/categories/${cateId}`)
