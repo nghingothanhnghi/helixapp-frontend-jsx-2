@@ -36,11 +36,11 @@ const router = createBrowserRouter(
         element={<Categories />}
       />
       <Route
-        path="/:cateId"
+        path="helixapp-frontend-jsx-2/:cateId"
         element={<CatePost />}
       />
       <Route
-        path=":cateId/posts/:postId"
+        path="helixapp-frontend-jsx-2/:cateId/posts/:postId"
         element={<PostDetail />}
       />
       

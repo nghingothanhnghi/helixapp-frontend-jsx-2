@@ -58,13 +58,6 @@ function PostDetail() {
                                     {description.children[0].text}
                                 </p>);
                         })}
-                        {/* <ul>
-                {posts.data.map((i, id) => {
-                  return (
-                    <PostsList key={id} posts={i}></PostsList>
-                  );
-                })}
-              </ul> */}
                     </div>
                     <div className="..."></div>
                 </div>
