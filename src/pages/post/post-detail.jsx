@@ -47,7 +47,7 @@ function PostDetail() {
                 <h1 className="mb-10 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
                     {post.data.attributes.title}
                 </h1>
-                <div class="text-sm text-gray-500 dark:text-gray-400 ">{post.data.attributes.updatedAt}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 ">{post.data.attributes.updatedAt}</div>
             </div>
             <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
                 <div className="grid grid-cols-3 gap-4">
