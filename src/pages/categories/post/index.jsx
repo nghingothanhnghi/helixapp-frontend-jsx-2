@@ -16,6 +16,8 @@ import PostsList from "../../../components/posts";
 import LoadingComponent from "../../../components/loading";
 import { getCategories, getFilterPosts } from '../../../api/http-common'
 
+import axios from "axios";
+
 function CatePost() {
   const matches = useMatches();
   const { cateId } = useParams();
@@ -43,6 +45,23 @@ function CatePost() {
         });
     }, 1000);
     return () => clearTimeout(timer);
+  }, []);
+  const [category, setCategory] = useState([]);
+  useEffect(() => {
+      const timer = setTimeout(() => {
+          axios.get(`https://api.chuotgreen.com/api/categories/${cateId}`)
+              .then((response) => {
+                setCategory(response.data)
+                  console.log(response.data, 'Categoy ID Component');
+              })
+              .catch((err) => {
+                  console.log(err);
+                  console.log(err.message);
+              })
+              .finally(() => {
+              });
+      }, 1000);
+      return () => clearTimeout(timer);
   }, []);
   
   return (

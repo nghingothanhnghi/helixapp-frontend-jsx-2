@@ -21,7 +21,7 @@ function PostDetail() {
     //let post = getPost.find((post) => post.id === postId);
     // console.log(post);
     // const navigate = useNavigate();
-    const [post, setPost] = useState([0]);
+    const [post, setPost] = useState([]);
     useEffect(() => {
         const timer = setTimeout(() => {
             axios.get(`https://api.chuotgreen.com/api/posts/${postId}`)
