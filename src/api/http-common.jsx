@@ -19,7 +19,7 @@ export const getCategories = async () => {
   return response.data
 }
 
-export const getPosts = async () => {
-  const response = await api.get('/posts')
+export const getFilterPosts = async () => {
+  const response = await api.get('/posts?filters[$and][0][categories][Name][$eq]=API')
   return response.data
 }

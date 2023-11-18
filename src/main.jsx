@@ -31,7 +31,7 @@ const router = createBrowserRouter(
         element={<SearchResult />}
       />
       <Route
-        path="helixapp-frontend-jsx-2/categories/"
+        path="/categories"
         element={<Categories />}
       />
       <Route
