@@ -18,3 +18,8 @@ export const getCategories = async () => {
   const response = await api.get('/categories')
   return response.data
 }
+
+export const getPosts = async () => {
+  const response = await api.get('/posts')
+  return response.data
+}
