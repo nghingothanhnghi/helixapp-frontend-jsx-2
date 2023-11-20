@@ -17,6 +17,8 @@ import BreadcrumbComponent from "../../components/breadcrumb";
 import LoadingComponent from "../../components/loading";
 
 import SearchBarSM from "../../components/searchbar-sm";
+import Markdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 function PostDetail() {
     let { postId } = useParams();

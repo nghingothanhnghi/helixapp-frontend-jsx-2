@@ -28,3 +28,8 @@ export const getPost = async (id) => {
   const response = await api.get('/posts/:id')
   return response.data
 }
+
+export const getPosts = async () => {
+  const response = await api.get('/posts')
+  return response.data
+}

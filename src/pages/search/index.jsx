@@ -1,18 +1,35 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import HeroComponent from '../../components/hero'
+import PostsResult from '../../components/posts-result';
 import Announcer from '../../components/announcer';
 import { getCategories } from '../../api/http-common';
-
-const posts = [
-  { id: '1', name: 'This first post is about React' },
-  { id: '2', name: 'This next post is about Preact' },
-  { id: '3', name: 'We have yet another React post!' },
-  { id: '4', name: 'This is the fourth and final post' },
-];
+import { getPosts } from '../../api/http-common';
 
 
 function SearchResult() {
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+
+  const [posts, setData] = useState([]);
+
+  useEffect(() => {
+    getPosts()
+      .then((json) => {
+        setData(json.data);
+        console.log(json.data, 'Posts Loaded');
+      })
+      .catch((err) => {
+        console.log(err);
+        setError(err.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+
 
   const filterPosts = (posts, query) => {
     if (!query) {
@@ -20,7 +37,7 @@ function SearchResult() {
     }
 
     return posts.filter((post) => {
-      const postName = post.name.toLowerCase();
+      const postName = post.attributes.title.toLowerCase();
       return postName.includes(query);
     });
   };
@@ -30,6 +47,7 @@ function SearchResult() {
   const [searchQuery] = useState(query || '');
   const filteredPosts = filterPosts(posts, searchQuery);
   console.log(query, "******** QUERY *********")
+  console.log(searchQuery, "******** SEARCH QUERY *********")
   console.log(filteredPosts, "******** FILTERED POSTS *********")
   return (
     <>
@@ -40,8 +58,8 @@ function SearchResult() {
           <div className="md:col-span-2">
             <Announcer message={`${searchQuery.length} letters of results for "${query}"`} />
             <ul>
-              {filteredPosts.map((post) => (
-                <li key={post.id}>{post.name}</li>
+              {posts.map((attributes, id) => (
+                <PostsResult key={id} posts={attributes} />
               ))}
             </ul>
           </div>
