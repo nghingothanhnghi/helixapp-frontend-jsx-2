@@ -3,7 +3,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
     const navigate = useNavigate();
     const onSubmit = () => {
         // sua lai duong dan truc tiep
-        navigate(`?s=${searchQuery}`);
+        navigate(`/helixapp-frontend-jsx-2/search-result?s=${searchQuery}`);
 
     };
     return (
