@@ -29,8 +29,8 @@ const router = createBrowserRouter(
         element={<Home />}
       />
       <Route
-        path="/helixapp-frontend-jsx-2/search-result"
-        // path="/search-result"
+        //path="/helixapp-frontend-jsx-2/search-result"
+        path="/search-result"
         element={<SearchResult />}
       />
       <Route
