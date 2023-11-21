@@ -18,6 +18,10 @@ export const getCategories = async () => {
   const response = await api.get('/categories')
   return response.data
 }
+export const getCategoriesSide = async () => {
+  const response = await api.get('/categories')
+  return response.data
+}
 
 export const getFilterPosts = async () => {
   const response = await api.get('/posts')
