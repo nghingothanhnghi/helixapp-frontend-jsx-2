@@ -19,7 +19,7 @@ export const getCategories = async () => {
   return response.data
 }
 export const getCategoriesSide = async () => {
-  const response = await api.get('/categories')
+  const response = await api.get('/categories?populate=*')
   return response.data
 }
 

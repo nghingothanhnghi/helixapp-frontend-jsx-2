@@ -17,8 +17,7 @@ import BreadcrumbComponent from "../../components/breadcrumb";
 import LoadingComponent from "../../components/loading";
 
 import SearchBarSM from "../../components/searchbar-sm";
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
+
 
 function PostDetail() {
     let { postId } = useParams();
@@ -67,6 +66,7 @@ function PostDetail() {
                 <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div className="col-span-2">
+                        
                             {post.data.attributes.description.map((description, index) => {
                                 return (
                                     <p key={index} className="mb-3 font-normal text-gray-700 dark:text-gray-400">

@@ -16,6 +16,7 @@ import PostsList from "../../../components/posts";
 import LoadingComponent from "../../../components/loading";
 import { getCategories, getFilterPosts } from '../../../api/http-common'
 
+
 import axios from "axios";
 
 function CatePost() {
