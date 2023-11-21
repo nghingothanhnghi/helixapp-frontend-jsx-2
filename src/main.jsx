@@ -24,8 +24,8 @@ const router = createBrowserRouter(
     <Route element={<Layout />} errorElement={<ErrorPage />}>
       <Route
        index
-        path="/helixapp-frontend-jsx-2/"
-        // path="/"
+        // path="/helixapp-frontend-jsx-2/"
+        path="/"
         element={<Home />}
       />
       <Route
