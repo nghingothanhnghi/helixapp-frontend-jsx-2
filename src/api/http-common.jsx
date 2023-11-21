@@ -34,6 +34,6 @@ export const getPost = async (id) => {
 }
 
 export const getPosts = async () => {
-  const response = await api.get('/posts')
+  const response = await api.get('/posts?populate=*')
   return response.data
 }
