@@ -3,11 +3,11 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => {
     const navigate = useNavigate();
     const onSubmit = () => {
         // sua lai duong dan truc tiep
-        navigate(`helixapp-frontend-jsx-2/search-result?s=${searchQuery}`);
+        navigate(`?s=${searchQuery}`);
 
     };
     return (
-        <form action="/" method="get"
+        <form action="/helixapp-frontend-jsx-2/search-result" method="get"
             autoComplete="off"
             onSubmit={onSubmit} className="flex flex-col mx-auto w-full max-w-md space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
 
