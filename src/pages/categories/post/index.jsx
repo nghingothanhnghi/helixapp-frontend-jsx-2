@@ -23,20 +23,36 @@ function CatePost() {
   const matches = useMatches();
   const { cateId } = useParams();
   console.log(cateId);
-  //const post = getFilterPosts.fetch((post) => post.id == cateId);
-  // console.log(post);
-  // const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [posts, setPosts] = useState({});
   const [category, setCategory] = useState({});
+  // useEffect(() => {
+  //   setLoading(true);
+  //   const timer = setTimeout(() => {
+  //     getFilterPosts()
+  //       .then((res) => {
+  //         setPosts(res.data);
+  //         console.log(res.data, 'Posts List Component');
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //         setError(err.message);
+  //       })
+  //       .finally(() => {
+  //         setLoading(false);
+  //       });
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
+
   useEffect(() => {
     setLoading(true);
     const timer = setTimeout(() => {
-      getFilterPosts()
+      axios.get(`https://api.chuotgreen.com/api/posts?filters[$and][0][categories][id][$eq]=${cateId}`)
         .then((res) => {
-          setPosts(res.data);
-          console.log(res.data, 'Posts List Component');
+          setPosts(res.data.data);
+          console.log(res.data.data, 'Filter posts by category id');
         })
         .catch((err) => {
           console.log(err);
@@ -45,13 +61,16 @@ function CatePost() {
         .finally(() => {
           setLoading(false);
         });
-    }, 1000);
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
+  
+
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      axios.get(`https://api.chuotgreen.com/api/categories/${cateId}`)
+      axios.get(`https://api.chuotgreen.com/api/categories/${cateId}?populate=*`)
         .then((response) => {
           setCategory(response.data)
           console.log(response.data, 'Categoy ID Component');
@@ -80,13 +99,13 @@ function CatePost() {
         <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold tracking-tight leading-none md:text-2xl lg:text-3xl dark:text-white mb-8 text-black-600/75">Get Started with {category.data.attributes.Name}</h3>
+              <h3 className="text-3xl font-bold tracking-tight leading-none md:text-2xl lg:text-3xl dark:text-white mb-8 text-black-600/75">Get Started with {category.data.attributes.Name}</h3>
 
               {loading && <LoadingComponent />}
               {!loading && posts.length ? (
                 <ul>
-                  {posts.map((post) => (
-                    <PostsList key={post.id} posts={post}></PostsList>
+                  {posts.map((post, i) => (
+                    <PostsList key={i} posts={post}></PostsList>
                   ))}
                 </ul>
               ) : (

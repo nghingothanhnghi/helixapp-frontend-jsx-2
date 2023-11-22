@@ -15,7 +15,7 @@ export const api = axios.create({
 })
 
 export const getCategories = async () => {
-  const response = await api.get('/categories')
+  const response = await api.get('/categories?populate=*')
   return response.data
 }
 export const getCategoriesSide = async () => {

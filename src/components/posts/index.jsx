@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 export default function PostsList({ posts }) {
-    console.log(posts, 'Posts List Component')
+    console.log(posts, 'Posts List Component From Cate Post')
     return (
         <li className="mb-5 p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <Link to={`posts/${posts.id}`}>
@@ -12,7 +12,7 @@ export default function PostsList({ posts }) {
                             {description.children[0].text}
                         </p>);
                 })} */}
-                     <p className="text-slate-600"> {posts.attributes.shortDescription}</p>  
+                <p className="text-slate-600"> {posts.attributes.shortDescription}</p>
             </Link>
         </li>
     );
