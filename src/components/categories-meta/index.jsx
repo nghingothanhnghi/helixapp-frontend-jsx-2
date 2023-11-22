@@ -4,7 +4,7 @@ export default function CategoriesMeta({ posts }) {
     console.log(posts, 'Meta Categories Component')
     return (
             <Link to={`/${posts.id}`} className="text-gray-900">
-                {posts.attributes.posts.data.attributes} 
+                {posts.attributes.Name} 
             </Link>
     );
 };

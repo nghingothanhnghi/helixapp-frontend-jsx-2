@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
-import CategoriesMeta from "../categories-meta";
-
 export default function CategoriesList({ post }) {
     console.log(post, 'Calegories Home List Component')
     return (
