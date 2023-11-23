@@ -32,6 +32,9 @@ function Home() {
     <>
       <HeroComponent></HeroComponent>
       <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
+        <h3 className="text-3xl font-bold tracking-tight leading-none md:text-2xl lg:text-3xl dark:text-white mb-8 text-black-600/75">
+          What your are looking?
+        </h3>
       {loading && <LoadingComponent/>}
       {!loading && categories.length ? (
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
