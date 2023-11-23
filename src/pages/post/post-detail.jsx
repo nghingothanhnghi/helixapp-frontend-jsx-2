@@ -89,7 +89,7 @@ function PostDetail() {
             <>
                 <div className="pg-hd py-8 px-4 mx-auto max-w-screen-xl px-4">
                     <BreadcrumbComponent></BreadcrumbComponent>
-                    <div className="grid grid-cols-1 md:grid-cols-3 mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-3 mb-10 gap-x-44">
                         <div className="md:col-span-2">
                             <h1 className="mb-5 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">{post.data.attributes.title}</h1>
                             <p className="text-sm text-gray-500 dark:text-gray-400">{moment(post.data.attributes.updatedAt).format('d MMM yyyy')} <span>by {post.data.attributes.author.data.attributes.name}</span></p></div>
@@ -99,7 +99,7 @@ function PostDetail() {
                     </div>
                 </div>
                 <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-44">
                         <div className="col-span-2">
 
                             {post.data.attributes.description.map((description, index) => {

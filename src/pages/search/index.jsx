@@ -77,7 +77,7 @@ function SearchResult() {
     <>
       <HeroComponent />
       <div className="py-8 px-4 mx-auto max-w-screen-xl px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-44">
           <div className="...">
             <h3 className='text-2xl font-normal tracking-tight leading-none md:text-2xl lg:text-2xl dark:text-white mb-8 text-gray-500'>by Categories</h3>
             <ul className="space-y-2 font-medium">
